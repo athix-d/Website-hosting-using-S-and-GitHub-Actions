@@ -6,7 +6,7 @@ phases:
       - echo "Installing Nginx"
       - rpm --import https://dl.google.com/linux/linux_signing_key.pub
       - yum clean all
-      - yum update -y
+      - yum update -y --exclude=google-chrome-stable || echo "YUM update partial failure - Chrome skipped"
       - yum install nginx -y
   build:
     commands:
