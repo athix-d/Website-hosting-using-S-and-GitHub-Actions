@@ -8,7 +8,7 @@ phases:
       - yum install nginx -y
   build:
     commands:
-      - echo "Build Started On `date`""
+      - echo "Build Started On $(date)""
       - cp index.html var/www/html
   post_build:
     commands:
