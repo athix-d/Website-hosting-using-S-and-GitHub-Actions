@@ -1,0 +1,19 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - echo Installing Nginx
+      - sudo yum update
+      - sudo yum install nginx-y
+  build:
+    commands:
+      - echo Build Started On `date`
+      - cp index.html var/www/html
+  post_build:
+    commdans:
+      - echo Configuring Nginx
+
+artifacts:
+  files:
+    - '**/*'
