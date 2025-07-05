@@ -4,11 +4,13 @@ phases:
   install:
     commands:
       - echo "Installing Nginx"
-      - yum update -y || echo "YUM update failed, continuing anyway"
+      - rpm --import https://dl.google.com/linux/linux_signing_key.pub
+      - yum clean all
+      - yum update -y
       - yum install nginx -y
   build:
     commands:
-      - echo "Build Started On $(date)""
+      - echo "Build Started On $(date)"
       - cp index.html var/www/html
   post_build:
     commands:
