@@ -13,11 +13,10 @@ phases:
       - echo "Build Started On $(date)"
       - mkdir -p /var/www/html
       - cp article.html /var/www/html/
-      - cp /var/www/html/article.html .
   post_build:
     commands:
       - echo "Configuring Nginx"
 
 artifacts:
   files:
-    - article.html
+    - '**/*'
