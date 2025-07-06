@@ -12,7 +12,7 @@ phases:
     commands:
       - echo "Build Started On $(date)"
       - mkdir -p /var/www/html
-      - cp article.html var/www/html
+      - cp article.html /var/www/html
   post_build:
     commands:
       - echo "Configuring Nginx"
